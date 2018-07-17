@@ -5,6 +5,7 @@ import math
 from groupy.client import Client
 from groupy import attachments
 
+offset = 4
 client = Client.from_token('QDGp5TUlTrv5nJcqgMgF6uUr2duyQCcfu0f4cG8P')
 list_of_groups = client.groups.list()
 main_group = {}
@@ -90,7 +91,7 @@ while True:
         main_group.post(text = to_send)
         start_punch = True
 
-    if now.isoweekday() < 5 and now.hour == 6 and now.minute == 8 and not end_punch:
+    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 10 and not end_punch:
         main_group.post(test = to_send)
         end_punch = True
 
