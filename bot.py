@@ -92,7 +92,7 @@ while True:
         start_punch = True
 
     print(now.hour)
-    if now.isoweekday() < 5 and now.hour == 14 and now.minute == 26 and not end_punch:
+    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 29 and not end_punch:
         main_group.post(text = to_send)
         end_punch = True
 
