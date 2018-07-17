@@ -14,6 +14,7 @@ if __name__ == '__main__':
             main_group = group
 
 
+    main_group.post(text = 'Hello')
     list_bots = client.bots.list()
     jack_jack = {}
     for bot in list_bots:
