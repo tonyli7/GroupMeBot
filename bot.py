@@ -88,12 +88,12 @@ while True:
                     
     to_send = 'Punch in'
     if now.isoweekday() < 5 and now.hour == 8 and now.minute == 30 and not start_punch:
-        main_group.post(text = to_send)
+        jack_jack.post(text = to_send)
         start_punch = True
 
     print(now.hour)
-    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 29 and not end_punch:
-        main_group.post(text = to_send)
+    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 31 and not end_punch:
+        jack_jack.post(text = to_send)
         end_punch = True
 
         #time.sleep(1)
