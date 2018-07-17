@@ -91,7 +91,7 @@ while True:
         main_group.post(text = to_send)
         start_punch = True
 
-    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 10 and not end_punch:
+    if now.isoweekday() < 5 and now.hour == 14 and now.minute == 11 and not end_punch:
         main_group.post(test = to_send)
         end_punch = True
 
