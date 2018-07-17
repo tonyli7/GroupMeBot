@@ -72,7 +72,18 @@ while True:
                 
                 jack_jack.post(text = "@" + members[i]['name'] + " Timer Set", attachments = [mention])
                 
-    
+    if last_message.text[0:4] == '@all':
+        locis = []
+        ids = []
+        index = 0
+        msg = ""
+        for m in members:
+            locis.append((index, len(m['name']) + 1))
+            index += len(m['name']) + 1
+            ids.append(m['user_id'])
+            msg += "@" + m['name']
+        mention_all = attachments.Mentions(loci = locis, user_ids = ids)
+        jack_jack.post(text = msg, attachments = [mention_all])
 
     # Timer for breaks
     for i in range(0, len(members)):
@@ -85,18 +96,16 @@ while True:
                     
                 jack_jack.post(text = "@" + members[i]['name'] + " Break is over", attachments = [mention])
                     
-                    
-    to_send = 'Punch in'
 
     now = datetime.datetime.now()
     
-    if now.isoweekday() < 5 and now.hour == 8 and now.minute == 30 and not start_punch:
-        jack_jack.post(text = to_send)
+    if now.isoweekday() < 5 and now.hour == 8 + offset and now.minute == 30 and not start_punch:
+        jack_jack.post(text = 'Punch in')
         start_punch = True
 
     
-    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 45 and not end_punch:
-        jack_jack.post(text = to_send)
+    if now.isoweekday() < 5 and now.hour == 17 + offset and now.minute == 30 and not end_punch:
+        jack_jack.post(text = 'Punch out')
         end_punch = True
 
-        #time.sleep(1)
+    
