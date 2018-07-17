@@ -21,7 +21,7 @@ for bot in list_bots:
     if bot.name == "Jack Jack":
         jack_jack = bot
 
-        now = datetime.datetime.now()
+
 
 # 0 1 2 3 4 5 6
 # M T W T F S S
@@ -87,12 +87,15 @@ while True:
                     
                     
     to_send = 'Punch in'
+
+    now = datetime.datetime.now()
+    
     if now.isoweekday() < 5 and now.hour == 8 and now.minute == 30 and not start_punch:
         jack_jack.post(text = to_send)
         start_punch = True
 
-    print(now.hour)
-    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 40 and not end_punch:
+    
+    if now.isoweekday() < 5 and now.hour == 14 + offset and now.minute == 45 and not end_punch:
         jack_jack.post(text = to_send)
         end_punch = True
 
