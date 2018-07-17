@@ -14,8 +14,6 @@ for group in list_of_groups:
     if group.name == "iDTech @ Marymount Boiiis":
         main_group = group
         
-
-main_group.post(text = 'Hello')
 list_bots = client.bots.list()
 jack_jack = {}
 for bot in list_bots:
@@ -111,4 +109,7 @@ while True:
         jack_jack.post(text = 'Punch out')
         end_punch = True
 
+    if now.hour == 0 + offset and now.minute == 0 and end_punch and start_punch:
+        start_punch = False
+        end_punch = False
     
