@@ -100,16 +100,16 @@ while True:
 
     now = datetime.datetime.now()
     
-    if now.isoweekday() < 5 and now.hour == 8 + offset and now.minute == 30 and not start_punch:
+    if now.isoweekday() < 5 and now.hour == 8 + offset and now.minute == 28 and not start_punch:
         jack_jack.post(text = 'Punch in')
         start_punch = True
 
     
-    if now.isoweekday() < 5 and now.hour == 17 + offset and now.minute == 30 and not end_punch:
+    if now.isoweekday() < 5 and now.hour == 17 + offset and now.minute == 28 and not end_punch:
         jack_jack.post(text = 'Punch out')
         end_punch = True
 
-    if now.hour == 0 + offset and now.minute == 0 and end_punch and start_punch:
+    if now.hour == 0 + offset and now.minute == 0:
         start_punch = False
         end_punch = False
     
