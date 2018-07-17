@@ -93,3 +93,5 @@ while True:
         if now.isoweekday() < 5 and now.hour == 5 and now.minute == 30 and not end_punch:
             main_group.post(test = to_send)
             end_punch = True
+
+        time.sleep(1)
