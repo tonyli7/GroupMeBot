@@ -71,7 +71,7 @@ if __name__ == "__main__":
         # Listen for breaks
         last_message = main_group.messages.list()[0]
     
-        if last_message.text == '/break':
+        if last_message.text == '@break':
             for i in range(0, len(members)):
                 if members[i]['name'] == last_message.name and not members[i]['break']:
                     members[i]['break'] = True
