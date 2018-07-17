@@ -1,9 +1,22 @@
+#!/usr/bin/env python
 import requests
 import time
 import datetime
 import math
 from groupy.client import Client
 from groupy import attachments
+
+import os
+import sys
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv)
+
+
 
 client = Client.from_token('QDGp5TUlTrv5nJcqgMgF6uUr2duyQCcfu0f4cG8P')
 list_of_groups = client.groups.list()
