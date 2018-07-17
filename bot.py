@@ -73,25 +73,25 @@ while True:
                 
     
 
-                # Timer for breaks
-        for i in range(0, len(members)):
-            if members[i]['break']:
-                if members[i]['end_time'] == math.floor(time.time()):
+    # Timer for breaks
+    for i in range(0, len(members)):
+        if members[i]['break']:
+            if members[i]['end_time'] == math.floor(time.time()):
                     
-                    members[i]['break'] = False
-                    mention = attachments.Mentions(loci = [(0, len(members[i]['name']) + 1)],
-                                                   user_ids = [members[i]['user_id']])
+                members[i]['break'] = False
+                mention = attachments.Mentions(loci = [(0, len(members[i]['name']) + 1)],
+                                               user_ids = [members[i]['user_id']])
                     
-                    jack_jack.post(text = "@" + members[i]['name'] + " Break is over", attachments = [mention])
+                jack_jack.post(text = "@" + members[i]['name'] + " Break is over", attachments = [mention])
                     
                     
-        to_send = 'Punch in'
-        if now.isoweekday() < 5 and now.hour == 8 and now.minute == 30 and not start_punch:
-            main_group.post(text = to_send)
-            start_punch = True
+    to_send = 'Punch in'
+    if now.isoweekday() < 5 and now.hour == 8 and now.minute == 30 and not start_punch:
+        main_group.post(text = to_send)
+        start_punch = True
 
-        if now.isoweekday() < 5 and now.hour == 5 and now.minute == 30 and not end_punch:
-            main_group.post(test = to_send)
-            end_punch = True
+    if now.isoweekday() < 5 and now.hour == 5 and now.minute == 30 and not end_punch:
+        main_group.post(test = to_send)
+        end_punch = True
 
         #time.sleep(1)
