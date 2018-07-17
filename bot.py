@@ -94,4 +94,4 @@ while True:
             main_group.post(test = to_send)
             end_punch = True
 
-        time.sleep(1)
+        #time.sleep(1)
