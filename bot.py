@@ -13,7 +13,7 @@ for group in list_of_groups:
     
     if group.name == "iDTech @ Marymount Boiiis":
         main_group = group
-        print(group.name)
+        
 
 main_group.post(text = 'Hello')
 list_bots = client.bots.list()
