@@ -10,9 +10,10 @@ client = Client.from_token('QDGp5TUlTrv5nJcqgMgF6uUr2duyQCcfu0f4cG8P')
 list_of_groups = client.groups.list()
 main_group = {}
 for group in list_of_groups:
-    if group.name == "Test Bot":
+    
+    if group.name == "iDTech @ Marymount Boiiis":
         main_group = group
-        
+        print(group.name)
 
 main_group.post(text = 'Hello')
 list_bots = client.bots.list()
@@ -54,6 +55,7 @@ for m in main_group.members:
 start_punch = False
 end_punch = False
 
+timer = 1800 #seconds
 while True:
     
 
@@ -66,12 +68,13 @@ while True:
             if members[i]['name'] == last_message.name and not members[i]['break']:
                 members[i]['break'] = True
                 members[i]['start_time'] = time.time()
-                members[i]['end_time'] = math.floor(time.time()) + 5
+                members[i]['end_time'] = math.floor(time.time()) + timer
                 mention = attachments.Mentions(loci = [(0, len(members[i]['name']) + 1)],
                                                user_ids = [members[i]['user_id']])
                 
                 jack_jack.post(text = "@" + members[i]['name'] + " Timer Set", attachments = [mention])
-                
+
+    # @all function
     if last_message.text[0:4] == '@all':
         locis = []
         ids = []
