@@ -25,13 +25,13 @@ for bot in list_bots:
 # 0 1 2 3 4 5 6
 # M T W T F S S
 
-mon = 0
-tue = 1
-wed = 2
-thu = 3
-fri = 4
-sat = 5
-sun = 6
+MON = 0
+TUE = 1
+WED = 2
+THU = 3
+FRI = 4
+SAT = 5
+SUN = 6
 
 members = []
 
@@ -52,7 +52,9 @@ for m in main_group.members:
 
 start_punch = False
 end_punch = False
-
+theme_day = False
+diploma_start_punch = False
+diploma_end_punch = False
 timer = 1800 #seconds
 while True:
     
@@ -109,7 +111,24 @@ while True:
         jack_jack.post(text = 'Punch out')
         end_punch = True
 
+
+    if now.isoweekday() == WED and now.hour == 12 + offset and now.minute == 45 and not theme_day:
+        jack_jack.post(text = 'Remember to do theme day')
+        theme_day = True
+
+    if now.isoweekday() == THU and now.hour == 17 + offset and now.minute == 58 and not diploma_start_punch:
+        jack_jack.post(text = 'Punch in for diplomas')
+        diploma_start_punch = True
+
+    if now.isoweekday() == FRI and now.hour == 0 and now.minute == 28 and not diploma_end_punch:
+        jack_jack.post(text = 'Punch out for diplomas')
+        diploma_end_punch = True
+        
+    # Reset vars
     if now.hour == 0 + offset and now.minute == 0:
         start_punch = False
         end_punch = False
-    
+        theme_day = False
+        diploma_start_punch = False
+        diploma_end_punch = False
+        
