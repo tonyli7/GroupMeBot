@@ -4,6 +4,7 @@ import datetime
 import math
 from groupy.client import Client
 from groupy import attachments
+from groupy import exceptions
 
 offset = 4
 client = Client.from_token('QDGp5TUlTrv5nJcqgMgF6uUr2duyQCcfu0f4cG8P')
@@ -61,7 +62,11 @@ while True:
 
 
     # Listen for breaks
-    last_message = main_group.messages.list()[0]
+    last_message = ""
+    try:
+        last_message = main_group.messages.list()[0]
+    except exceptions.BadResponse:
+        continue
     
     if last_message.text == '@break':
         for i in range(0, len(members)):
