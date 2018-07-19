@@ -54,6 +54,7 @@ end_punch = False
 theme_day = False
 diploma_start_punch = False
 diploma_end_punch = False
+student_surveys = False
 timer = 1800 #seconds
 while True:
     
@@ -125,6 +126,11 @@ while True:
     if now.weekday() == FRI and now.hour == 0 and now.minute == 28 and not diploma_end_punch:
         jack_jack.post(text = 'Punch out for diplomas')
         diploma_end_punch = True
+
+    # Student surveys reminder
+    if now.weekday() == FRI and now.hour == 14 + offset and now.minute == 0 and not student_surveys:
+        jack_jack.post(text = 'Remember to do student surveys.')
+        student_surveys = True
         
     # Reset vars at midnight
     if now.hour == 0 + offset and now.minute == 0:
