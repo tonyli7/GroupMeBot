@@ -38,6 +38,7 @@ members = []
 
 #initialize list
 for m in main_group.members:
+    print(m.nickname)
     members.append({'name':m.nickname,
                     'user_id': m.user_id,
                     'break':False,
@@ -70,6 +71,7 @@ while True:
     
     if last_message.text == '@break':
         for i in range(0, len(members)):
+            
             if members[i]['name'] == last_message.name and not members[i]['break']:
                 members[i]['break'] = True
                 members[i]['start_time'] = time.time()
