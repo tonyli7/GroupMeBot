@@ -69,7 +69,7 @@ while True:
     except exceptions.BadResponse:
         continue
     
-    if last_message.text == '@break':
+    if '@break' in last_message.text:
         print(last_message.name)
         for i in range(0, len(members)):
             
