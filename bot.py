@@ -7,7 +7,7 @@ from groupy import attachments
 from groupy import exceptions
 
 offset = 4
-client = Client.from_token('QDGp5TUlTrv5nJcqgMgF6uUr2duyQCcfu0f4cG8P')
+client = Client.from_token('gGmcD6mT81ro3NH40xK4t8ezMb5snRfBShMVMTTH')
 list_of_groups = client.groups.list()
 main_group = {}
 for group in list_of_groups:
@@ -23,8 +23,6 @@ for bot in list_bots:
 
 
 
-# 0 1 2 3 4 5 6
-# M T W T F S S
 
 MON = 0
 TUE = 1
