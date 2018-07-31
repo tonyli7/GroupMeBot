@@ -7,7 +7,7 @@ from groupy import attachments
 from groupy import exceptions
 
 offset = 4
-client = Client.from_token('gGmcD6mT81ro3NH40xK4t8ezMb5snRfBShMVMTTH')
+client = Client.from_token('2oIxqjNBQLc5uK36lylVLRuhgGccAHEEp0Cx6Do4')
 list_of_groups = client.groups.list()
 main_group = {}
 for group in list_of_groups:
@@ -83,8 +83,12 @@ while True:
 
     # @areyoubaby
 
-    if last_message.text[0:16] == '@pio are you baby':
+    if last_message.text[0:16] == '@pio are you baby' or last_message.text[0:16] == '@Pio are you baby':
         jack_jack.post(text = "I'm no fkn baby, i'm fkn man")
+
+    # Tu dique que gata
+    if last_message.text[0:17] == 'Tu dique que gata':
+        jack_jack.post(text = "miauu")
     
     # @all function
     if last_message.text[0:4] == '@all':
