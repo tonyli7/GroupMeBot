@@ -81,6 +81,11 @@ while True:
                 
                 jack_jack.post(text = "@" + members[i]['name'] + " Timer Set", attachments = [mention])
 
+    # @areyoubaby
+
+    if last_message.text[0:16] == '@pio are you baby':
+        jack_jack.post(text = "I'm no fkn baby, i'm fkn man")
+    
     # @all function
     if last_message.text[0:4] == '@all':
         locis = []
