@@ -2,6 +2,7 @@ import requests
 import time
 import datetime
 import math
+import random
 from groupy.client import Client
 from groupy import attachments
 from groupy import exceptions
@@ -67,11 +68,13 @@ while True:
     except exceptions.BadResponse:
         continue
 
-    #if last_message.text:
-    #    if last_message.name == "Robert Taddeo":
-    #        jack_jack.post(text = "Silencio")
-    
-    # Listen for breaks
+    if last_message.text:
+        if last_message.name == "Daniel":
+            curse_words = ["chinga tu madre", "Hijo de puta", "Fight me Danny, fight me in the ring"]
+            jack_jack.post(text = curse_words[random.randint(0,2)])
+     
+
+     Listen for breaks
     if last_message.text and '@break' in last_message.text:
         print(last_message.name)
         for i in range(0, len(members)):
