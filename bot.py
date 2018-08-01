@@ -81,13 +81,14 @@ while True:
                 
                 jack_jack.post(text = "@" + members[i]['name'] + " Timer Set", attachments = [mention])
 
+    pio = '@pio are you baby'
     # @areyoubaby
-
-    if last_message.text[0:16] == '@pio are you baby' or last_message.text[0:16] == '@Pio are you baby':
+    if last_message.text[0:len(pio)].lower() == '@pio are you baby':
         jack_jack.post(text = "I'm no fkn baby, i'm fkn man")
 
+    pio = 'tu dique que gata'
     # Tu dique que gata
-    if last_message.text[0:17] == 'Tu dique que gata':
+    if last_message.text[0:len(pio)].lower() == 'tu dique que gata':
         jack_jack.post(text = "miauu")
     
     # @all function
