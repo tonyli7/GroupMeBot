@@ -67,9 +67,9 @@ while True:
     except exceptions.BadResponse:
         continue
 
-    if last_message.text:
-        if last_message.name == "Robert Taddeo":
-            jack_jack.post(text = "Silencio")
+    #if last_message.text:
+    #    if last_message.name == "Robert Taddeo":
+    #        jack_jack.post(text = "Silencio")
     
     # Listen for breaks
     if last_message.text and '@break' in last_message.text:
