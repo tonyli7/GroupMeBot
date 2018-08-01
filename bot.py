@@ -18,7 +18,7 @@ for group in list_of_groups:
 list_bots = client.bots.list()
 jack_jack = {}
 for bot in list_bots:
-    if bot.name == "Jack Jack":
+    if bot.name == "Pio":
         jack_jack = bot
 
 
