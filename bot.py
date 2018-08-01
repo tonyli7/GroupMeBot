@@ -36,7 +36,7 @@ members = []
 
 #initialize list
 for m in main_group.members:
-    
+    print(m.nickname)
     members.append({'name':m.nickname,
                     'user_id': m.user_id,
                     'break':False,
@@ -60,13 +60,18 @@ while True:
     
 
 
-    # Listen for breaks
+
     last_message = ""
     try:
         last_message = main_group.messages.list()[0]
     except exceptions.BadResponse:
         continue
+
+    if last_message.text:
+        if last_message.name == "Robert Taddeo":
+            jack_jack.post(text = "Silencio")
     
+    # Listen for breaks
     if last_message.text and '@break' in last_message.text:
         print(last_message.name)
         for i in range(0, len(members)):
@@ -84,13 +89,14 @@ while True:
     pio = '@pio are you baby'
     # @areyoubaby
     if last_message.text[0:len(pio)].lower() == '@pio are you baby':
-        jack_jack.post(text = "I'm no fkn baby, i'm fkn man")
+        jack_jack.post(text = "i no fkn baby, i'm fkn man")
 
     pio = 'tu dique que gata'
     # Tu dique que gata
     if last_message.text[0:len(pio)].lower() == 'tu dique que gata':
         jack_jack.post(text = "miauu")
-    
+
+
     # @all function
     if last_message.text[0:4] == '@all':
         locis = []
