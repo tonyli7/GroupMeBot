@@ -74,7 +74,7 @@ while True:
             jack_jack.post(text = curse_words[random.randint(0,2)])
      
 
-     Listen for breaks
+     
     if last_message.text and '@break' in last_message.text:
         print(last_message.name)
         for i in range(0, len(members)):
