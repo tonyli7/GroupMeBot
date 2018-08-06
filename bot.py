@@ -91,17 +91,17 @@ while True:
 
     pio = '@pio are you baby'
     # @areyoubaby
-    if last_message.text[0:len(pio)].lower() == '@pio are you baby':
+    if last.message.text and last_message.text[0:len(pio)].lower() == '@pio are you baby':
         jack_jack.post(text = "i no fkn baby, i'm fkn man")
 
     pio = 'tu dique que gata'
     # Tu dique que gata
-    if last_message.text[0:len(pio)].lower() == 'tu dique que gata':
+    if last.message.text and last_message.text[0:len(pio)].lower() == 'tu dique que gata':
         jack_jack.post(text = "miauu")
 
 
     # @all function
-    if last_message.text[0:4] == '@all':
+    if last.message.text and last_message.text[0:4] == '@all':
         locis = []
         ids = []
         index = 0
