@@ -102,7 +102,7 @@ while True:
 
     # @all function
     pio = '@all'
-    if last_message.text and if pio in last_message.text:
+    if last_message.text and pio in last_message.text:
         locis = []
         ids = []
         index = 0
