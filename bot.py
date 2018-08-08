@@ -68,10 +68,10 @@ while True:
     except exceptions.BadResponse:
         continue
 
-    if last_message.text:
-        if last_message.name == "Daniel":
-            curse_words = ["chinga tu madre", "Hijo de puta", "Fight me Danny, fight me in the ring"]
-            jack_jack.post(text = curse_words[random.randint(0,2)])
+#    if last_message.text:
+#        if last_message.name == "Daniel":
+#            curse_words = ["chinga tu madre", "Hijo de puta", "Fight me Danny, fight me in the ring"]
+#            jack_jack.post(text = curse_words[random.randint(0,2)])
      
 
      
